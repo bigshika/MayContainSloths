@@ -1,0 +1,34 @@
+{
+  "name": "MayContainSloths",
+  "version": "0.0.1",
+  "description": "A Slackbot that posts cute pictures of various things",  
+  "main": "bot",
+  "dependencies": {
+    "jfs": "^0.2.6",
+    "botkit": "^0.1.1",
+    "request": "^2.72.0",
+    "xml2js": "^0.4.16",
+    "twitter-node-client": "^0.0.6"
+  },
+  "scripts": {
+    "start":"node bot.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bigshika/MayContainSloths.git"
+  },
+  "keywords": [
+    "animals",
+    "slackbot",
+    "cats",
+    "sloths",
+    "dogs",
+    "pugs"
+  ],
+  "author": "@bigshika",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bigshika/MayContainSloths/issues"
+  },
+  "homepage": "https://github.com/bigshika/MayContainSloths#readme"
+}
