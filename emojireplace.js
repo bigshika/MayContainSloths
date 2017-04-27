@@ -34,7 +34,6 @@ var positiveReactions = [
 
 exports.lootEmoji = () => getRandomEmoji(lootTable);
 exports.todoEmoji = () => getRandomEmoji(emoji.concat(customEmoji));
-// exports.todoEmoji = () => getRandomEmoji(debugList);
 exports.pollinationEmoji = () => getRandomEmoji(plantEmoji);
 
 function getRandomEmoji(emojiList) {

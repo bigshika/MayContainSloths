@@ -83,9 +83,6 @@ controller.hears(['^\\.aww\\b'],["direct_message","direct_mention", "mention", "
 			responseObj = dogs.getDogBotObject();
 			break;
 		case 3:
-			responseObj = dogs.getQuesoObject();
-			break;
-		case 4:
 			responseObj = pugs.getPugObject();
 			break;				
 	}
