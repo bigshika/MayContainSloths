@@ -11,7 +11,7 @@ RUN npm install
 #install code
 COPY . /usr/src/app/ 
 
-ENV NODE_ENV=development SLACK_TOKEN=tokenhere TWITTER_KEY=twitterkeyhere TWITTER_SECRET=twittersecrethere CAT_TOKEN=cattokenhere
+ENV NODE_ENV=development SLACK_TOKEN=tokenhere TWITTER_KEY=twitterkeyhere TWITTER_SECRET=twittersecrethere CAT_TOKEN=cattokenhere ADMIN_SLACKNAME=taylor.swift
 
 EXPOSE 8080
 

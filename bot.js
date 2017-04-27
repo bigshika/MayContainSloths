@@ -13,7 +13,7 @@ var helpers = require('./helpers.js');
 var usersById = {};
 var channelLookup = {};
 
-var me = 'adminusername';
+var me = process.env.ADMIN_SLACKNAME;
 
 var controller = Botkit.slackbot({
 	debug: false,
