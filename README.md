@@ -7,7 +7,7 @@ cd to the MayContainSloths directory
 
 Run your bot from the command line:
 ```
-npm start
+SLACK_TOKEN=tokenhere TWITTER_KEY=twitterkeyhere TWITTER_SECRET=twittersecrethere CAT_TOKEN=cattokenhere ADMIN_SLACKNAME=admin.mcadminface npm start
 ```
 
 ### To run the bot in a Docker container
