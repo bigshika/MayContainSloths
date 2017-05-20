@@ -29,4 +29,5 @@ ENV NODE_ENV=development SLACK_TOKEN=tokenhere TWITTER_KEY=twitterkeyhere TWITTE
 Slack token can be obtained from http://my.slack.com/services/new/bot
 Twitter key and secret can be obtained by creating a new app at https://apps.twitter.com/
 Cat API key can be requested from http://thecatapi.com/
-Admin user can be your slack handle - it will let you remove cats and pugs with the :no_good::skin-tone-2: emoji reaction.
+
+Admin user can be your slack handle - it will let that user remove cats and pugs with the :no_good::skin-tone-2: emoji reaction.

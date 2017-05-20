@@ -8,7 +8,7 @@ var catFacts = require('./catfacts.js');
 var tay = require('./tay.js');
 var pugs = require('./pugs.js');
 var helpers = require('./helpers.js');
-
+var doges = require('./doges.js');
 
 var usersById = {};
 var channelLookup = {};
@@ -44,6 +44,7 @@ tay.getBae();
 tay.getBee();
 dogs.whoLetTheDogsOut();
 pugs.puggerUp();
+doges.manyDoge();
 
 controller.hears(["^\\.help\\b","^\\.pokedex\\b"],["direct_message","direct_mention","mention", "ambient"],function(bot,message) {
   	bot.reply(message, helpers.makeResponseObject(helpers.helpText));
@@ -69,6 +70,10 @@ controller.hears(['^\\.pug\\b'],["direct_message","direct_mention", "mention", "
 	botResponse(message, ['pug'], 'awws', pugs.getPugObject());
 });
 
+controller.hears(['^\\.doge\\b', '^\\.doge\\b'],["direct_message","direct_mention", "mention", "ambient"], function(bot,message) {
+	botResponse(message, ['suchwow'], 'awws', doges.getDogeObject());
+});
+
 controller.hears(['^\\.aww\\b'],["direct_message","direct_mention", "mention", "ambient"],function(bot,message) {
 	var responseObj;
 	var random = Math.floor(Math.random() * 5);
@@ -84,7 +89,10 @@ controller.hears(['^\\.aww\\b'],["direct_message","direct_mention", "mention", "
 			break;
 		case 3:
 			responseObj = pugs.getPugObject();
-			break;				
+			break;		
+		case 4:
+			responseObj = doges.getDogeObject();
+			break;					
 	}
 	botResponse(message, ['feet'], 'awws', responseObj);
 });
