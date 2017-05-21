@@ -112,13 +112,21 @@ controller.hears(['^\\.tay\\b', '^\\.taytay\\b'],["direct_message","direct_menti
 controller.hears(['^\\.kanye\\b'],["direct_message","direct_mention", "mention", "ambient"],function(bot,message) {
 	addReaction(message, 'microphone');
     if (helpers.isWhiteListed(getChannelName(message.channel), 'tay')) {
-		bot.reply(message, tay.getTruncatedTaytayBotObject(), function() {
-			bot.reply(message, tay.getYeezyBotObject());
-		});
+		if (Math.floor(Math.random() * 3) % 3 === 0) {
+			bot.reply(message, tay.getTruncatedTaytayBotObject(), function() {
+				bot.reply(message, tay.getInterruptingKanye());
+			});
+		} else {
+			bot.reply(message, tay.getNormalYeezyBotObject());				
+		}
   	} else {
-  		directReply(message, tay.getTruncatedTaytayBotObject(), function() {
-  			directReply(message, tay.getYeezyBotObject());
-  		});
+		if (Math.floor(Math.random() * 3) % 3 === 0) {
+			directReply(message, tay.getTruncatedTaytayBotObject(), function() {
+				directReply(message, tay.getInterruptingKanye());
+			});			
+		} else {
+			directReply(message, tay.getNormalYeezyBotObject())
+		}
 	}
 });
 
