@@ -46,7 +46,7 @@ dogs.whoLetTheDogsOut();
 pugs.puggerUp();
 doges.manyDoge();
 
-controller.hears(["^\\.help\\b","^\\.pokedex\\b"],["direct_message","direct_mention","mention", "ambient"],function(bot,message) {
+controller.hears(["^\\.help\\b"],["direct_message","direct_mention","mention", "ambient"],function(bot,message) {
   	bot.reply(message, helpers.makeResponseObject(helpers.helpText));
 }); 
 
@@ -70,7 +70,7 @@ controller.hears(['^\\.pug\\b'],["direct_message","direct_mention", "mention", "
 	botResponse(message, ['pug'], 'awws', pugs.getPugObject());
 });
 
-controller.hears(['^\\.doge\\b', '^\\.doge\\b'],["direct_message","direct_mention", "mention", "ambient"], function(bot,message) {
+controller.hears(['^\\.doge\\b', '^\\.shibe\\b'],["direct_message","direct_mention", "mention", "ambient"], function(bot,message) {
 	botResponse(message, ['suchwow'], 'awws', doges.getDogeObject());
 });
 
