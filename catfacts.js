@@ -24,10 +24,12 @@ function getRandomCatFact() {
 }
 
 exports.cacheCatFacts = () => {
-	request('http://catfacts-api.appspot.com/api/facts?number=50', function (error, response, body) {
+	request('https://catfact.ninja/facts?limit=50', function (error, response, body) {
 	  if (!error && response.statusCode == 200) {
 	    var data = JSON.parse(body);
-	    catFacts = data['facts'];
+	    catFacts = data.map(function(x) {
+			return x.fact;
+		});
 		console.log('Thank you for signing up for Cat Facts. You will now receive fun daily facts about CATS!');
 	  }
 	});
