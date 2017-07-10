@@ -26,11 +26,15 @@ function getRandomCatFact() {
 exports.cacheCatFacts = () => {
 	request('https://catfact.ninja/facts?limit=50', function (error, response, body) {
 	  if (!error && response.statusCode == 200) {
-	    var data = JSON.parse(body);
-	    catFacts = data.map(function(x) {
+	    var data = JSON.parse(body).data;
+	    catFacts = data.filter(function(x) {
+			// These facts are... perhaps not good for work
+			return !(x.fact.includes("in China") || x.fact.includes("in Asia") || x.fact.includes("slang"));
+		})
+		.map(function(x) {
 			return x.fact;
 		});
-		console.log('Thank you for signing up for Cat Facts. You will now receive fun daily facts about CATS!');
+		console.log('Thank you for signing up for Cat Facts. You will now receive ' + catFacts.length + ' fun daily facts about CATS!');
 	  }
 	});
 }
