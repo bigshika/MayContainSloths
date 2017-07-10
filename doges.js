@@ -8,7 +8,7 @@ exports.manyDoge = () => {
 }
 
 function cacheShibes() {
-	request('http://shibe.online/api/shibes?count=' + numberOfDoges + '&urls=true&httpsUrls=true', function (error, response, body) {
+	request('http://shibe.online/api/shibes?count=' + numberOfDoges + '&urls=true', function (error, response, body) {
 	  if (!error && response.statusCode == 200) {
 	    var data = JSON.parse(body);
 	    var dogesSoFar = shibes.length;
