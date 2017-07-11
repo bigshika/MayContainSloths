@@ -23,11 +23,12 @@ module.exports = {
 		}
 	},
 	makeResponseObject: makeResponseObject,
-	helpText: helpText
+	helpText: helpText,
+	blacklistEmoji: ':no_good::skin-tone-2:'
 }
 
 function isWhiteListed(channel, whiteList) {
-	return whiteList.indexOf(channel) >= 0;
+	return true;
 }
 
 function removeCommand(string) {

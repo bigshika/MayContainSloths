@@ -13,7 +13,7 @@ var doges = require('./doges.js');
 var usersById = {};
 var channelLookup = {};
 
-var me = process.env.ADMIN_SLACKNAME;
+var admin = process.env.ADMIN_SLACKNAME;
 
 var controller = Botkit.slackbot({
 	debug: false,
@@ -151,7 +151,7 @@ controller.on('reaction_added', function(bot, message) {
 			if ((isFromCatbot || isFromPugbot) && messageObject.subtype === 'bot_message') {
 				if (emojireplace.isPositiveEmoji(message.reaction) && isFromCatbot) {
 					cat.fave(fixUrls(messageObject.text), message.user);
-				} else if (message.reaction === helpers.blacklistEmoji && getUserName(message.user) === me) {
+				} else if (message.reaction === helpers.blacklistEmoji && getUserName(message.user) === admin) {
 					bot.api.chat.delete(message.item);
 					if (isFromCatbot) {
 						cat.blacklist(fixUrls(messageObject.text));						
